@@ -4,15 +4,15 @@
 #include "Heapify.h"
 
 int parent(int i) {
-	return (int)floor(i / 2);
+	return (int)floor(i - 1 / 2);
 }
 
 int right(int i) {
-	return 2 * i + 1;
+	return 2 * i + 2;
 }
 
 int left(int i) {
-	return 2 * i;
+	return 2 * i + 1;
 }
 
 void swap(int& i, int& j) {
