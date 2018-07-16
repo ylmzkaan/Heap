@@ -1,7 +1,17 @@
+#include "HeapSort.h"
 #include <iostream>
 #include <math.h>
 #include "Heap.h"
-#include "Heapify.h"
+
+std::vector<int> HeapSort(std::vector<int> array) {
+	Heap heap = Heap(array);
+	while (heap.heapSize != 0) {
+		swap(heap.array[0], heap.array[heap.heapSize - 1]);
+		heap.heapSize--;
+		maxHeapify(heap, 0);
+	}
+	return heap.array;
+}
 
 int parent(int i) {
 	return (int)floor(i - 1 / 2);
@@ -27,7 +37,8 @@ void maxHeapify(Heap& heap, int index) {
 	int largest;
 	if (l < heap.heapSize && heap.array[l] > heap.array[index]) {
 		largest = l;
-	} else {
+	}
+	else {
 		largest = index;
 	}
 	if (r < heap.heapSize && heap.array[r] > heap.array[largest]) {
@@ -36,7 +47,7 @@ void maxHeapify(Heap& heap, int index) {
 	if (largest != index) {
 		swap(heap.array[largest], heap.array[index]);
 		maxHeapify(heap, largest);
-	} 
+	}
 }
 
 Heap buildMaxHeap(std::vector<int> array) {
