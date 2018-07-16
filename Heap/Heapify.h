@@ -2,7 +2,7 @@
 #include <vector>
 
 Heap buildMaxHeap(std::vector<int>);
-void maxHeapify(std::vector<int>);
+void maxHeapify(Heap&);
 int parent(int);
 int right(int);
 int left(int);

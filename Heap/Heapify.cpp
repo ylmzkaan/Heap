@@ -21,7 +21,7 @@ void swap(int& i, int& j) {
 	j = temp;
 }
 
-void maxHeapify(Heap heap, int index) {
+void maxHeapify(Heap& heap, int index) {
 	int l = left(index);
 	int r = right(index);
 	int largest;
@@ -35,7 +35,6 @@ void maxHeapify(Heap heap, int index) {
 	}
 	if (largest != index) {
 		swap(heap.array[largest], heap.array[index]);
-		heap.print();
 		maxHeapify(heap, largest);
 	} 
 }
@@ -44,6 +43,7 @@ Heap buildMaxHeap(std::vector<int> array) {
 	Heap heap = Heap(array);
 	for (int i = (int)floor(heap.heapSize / 2); i > 0; i--) {
 		maxHeapify(heap, i);
+		heap.print();
 	}
 	return heap;
 }
