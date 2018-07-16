@@ -41,9 +41,8 @@ void maxHeapify(Heap& heap, int index) {
 
 Heap buildMaxHeap(std::vector<int> array) {
 	Heap heap = Heap(array);
-	for (int i = (int)floor(heap.heapSize / 2); i > 0; i--) {
+	for (int i = (int)floor(heap.heapSize / 2); i >= 0; i--) {
 		maxHeapify(heap, i);
-		heap.print();
 	}
 	return heap;
 }
