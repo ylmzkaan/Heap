@@ -116,13 +116,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Heap.cpp" />
-    <ClCompile Include="Heapify.cpp" />
     <ClCompile Include="HeapSort.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Heap.h" />
-    <ClInclude Include="Heapify.h" />
     <ClInclude Include="HeapSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

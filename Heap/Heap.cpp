@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Heap.h"
 
 Heap::Heap(std::vector<int> array) {

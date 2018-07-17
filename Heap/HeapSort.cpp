@@ -4,7 +4,7 @@
 #include "Heap.h"
 
 std::vector<int> HeapSort(std::vector<int> array) {
-	Heap heap = Heap(array);
+	Heap heap = buildMaxHeap(array);
 	while (heap.heapSize != 0) {
 		swap(heap.array[0], heap.array[heap.heapSize - 1]);
 		heap.heapSize--;
@@ -14,7 +14,7 @@ std::vector<int> HeapSort(std::vector<int> array) {
 }
 
 int parent(int i) {
-	return (int)floor(i - 1 / 2);
+	return (int)floor((i - 1) / 2);
 }
 
 int right(int i) {
