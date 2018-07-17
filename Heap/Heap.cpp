@@ -6,7 +6,6 @@ Heap::Heap(std::vector<int> array) {
 }
 
 void Heap::print() {
-	for (auto& item : this->array)
-		std::cout << item << ", ";
-	std::cout << std::endl;
+	for (std::vector<int>::const_iterator i = this->array.begin(); i != this->array.end(); ++i)
+		std::cout << *i << ' ';
 }
